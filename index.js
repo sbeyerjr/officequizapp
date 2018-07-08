@@ -131,7 +131,7 @@ function generateQuestionBlock() {
    <button type="submit" id="button-nextquestion" class="hidden" value="Go">Next Question</button>
 
 `;
-	let validate = !$('input[name=answer]:radio:checked').val()
+	let validate = !$('input[name=answer]:radio:checked').val();
 	$('.js-answer-box').addClass('hidden');
 	$('.js-question-box').append(answerBlock);
     $('#button-submit').on('click', function(event) {
