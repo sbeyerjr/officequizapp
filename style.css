@@ -1,0 +1,126 @@
+body {
+	background-color: #34495e;
+	height: 100%; 
+	padding: 10px;
+	font-family: 'Lato', sans-serif;
+    
+}
+
+header {
+	text-align: center;
+	vertical-align: middle;
+    border: 5px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin: 20px auto 0;
+    padding-top:15px;
+    background-color: #ecf0f1
+}
+
+ul {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+
+h2, h4 {
+	font-size: 35px;
+}
+h3 {
+	font-size: 20px;
+	text-align: center;
+}
+
+
+
+input[type="radio"] {
+    margin: 0 15px 15px 0;
+}
+
+
+button  {
+  color: white;
+  background-color: #9b59b6;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 15px 25px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+fieldset {
+	width:50%;
+	padding-top:20px;
+	margin: auto;
+	border-radius: 5px;
+
+
+}
+.btn-sub {
+	text-align: center;
+}
+
+.logo {
+	max-width: 300px;
+	margin-bottom: -25px
+}
+
+
+.page{
+  background-color: #C0C0C0;
+  opacity: 0.6; 
+  color: #000030;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #FFFAF0;
+  font-size: 20px; 
+}
+
+
+
+.quiz-box {
+	background-color: white;
+	border: 5px solid black;
+	margin: auto;
+	padding: 10px;
+	height: 400px;
+
+}
+
+.data-box {
+	background-color: #8e44ad;
+    border-bottom: 1px black solid;
+    border-left: 5px black solid;
+    border-right: 5px black solid;
+    text-align: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.instructions{
+	text-align: center;
+}
+
+.answer-block {
+	margin: auto;
+	padding: 15px;
+	max-width: 600px;
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.option {
+	background-color: #bdc3c7;
+	border:1px solid gray;
+	border-radius: 5px;
+	padding: 10px
+	font-size:15px;
+}
+
+.hidden {
+	display: none;
+}
