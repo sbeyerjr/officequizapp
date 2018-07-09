@@ -78,7 +78,7 @@ let score = 0;
 let scoreI = 0;
 // Start the quiz, hide start button and start question loop
 
-
+function startButton() {
   $('.button-start').click(event =>
     $('.button-start').addClass(`hidden`)
   );
@@ -88,6 +88,8 @@ let scoreI = 0;
   $('.button-start').click(event =>
     generateQuestionBlock()
   );
+}
+
 
 function generateScore() {
 	
@@ -110,8 +112,7 @@ function generateQuestionNumber() {
 }
 
 //Loop through the questions
-generateScore();
-generateQuestionNumber();
+
 function generateQuestionBlock() {
 	
 	const answerBlock =  
@@ -125,20 +126,41 @@ function generateQuestionBlock() {
     <input type="radio" name="answer" id ="option2" value="${STORE[i].options[1]}"><label for="option2">${STORE[i].options[1]}</label><br>
 	<input type="radio" name="answer" id ="option3" value="${STORE[i].options[2]}"><label for="option3">${STORE[i].options[2]}</label><br>
 	<input type="radio" name="answer" id ="option4" value="${STORE[i].options[3]}"><label for="option4">${STORE[i].options[3]}</label><br>
+	<div class="btn-sub"><button type="submit" id="button-submit" value="Go">Submit Answer</button></div>
 	</fieldset>
-<button type="submit" id="button-submit" value="Go">Submit Answer</button>
    </form></div>
-   <button type="submit" id="button-nextquestion" class="hidden" value="Go">Next Question</button>
-
+   
 `;
-	let validate = !$('input[name=answer]:radio:checked').val();
+
+
+$('.js-question-box').append(answerBlock);
+$('.js-question-box').removeClass('hidden');
+$('.data-box').removeClass('hidden');
+$('.quiz-box').addClass('hidden');
+
+clickButton();
+}
+
+function clickButton() {
+	
 	$('.js-answer-box').addClass('hidden');
-	$('.js-question-box').append(answerBlock);
-    $('#button-submit').on('click', function(event) {
-    	checkAnswer();
-  	$('#button-submit').remove();
+	
+     $('#question-form').on('submit', function(event) {
+  	if (!$("input[name=answer]:checked").val()) {
+        alert('Nothing is checked!');
+        return false; // so form doesn't submit
+    }
+    else {
+    checkAnswer();
+	$('#button-submit').remove();
   	$('.js-questions').remove();
-  	
+  	$('.js-question-box').addClass('hidden');
+  	whenToStopQuiz();
+    }
+});
+  	}
+
+  	function whenToStopQuiz(){
 
   	if (i < STORE.length ) {
   		
@@ -147,7 +169,7 @@ function generateQuestionBlock() {
   	else {
   		tallyScore();
   	}
-  	});
+  	
 
 }
 
@@ -174,7 +196,8 @@ function checkAnswer() {
 		const correctBlock = 
 	`<div class="answer-block">
 	<h4>Great job!</h4>
-	<p>${STORE[i].quote}</p></div>
+	<p>${STORE[i].quote}</p>
+	<button type="submit" id="button-nextquestion" class="hidden" value="Go">Next Question</button></div>
 	`
 
 	const incorrectBlock = `
@@ -182,6 +205,7 @@ function checkAnswer() {
 	<h4> Sorry, the correct answer was ${STORE[i].answer}
 		</h4>
 		<p>${STORE[i].quote}</p>
+		<button type="submit" id="button-nextquestion" class="hidden" value="Go">Next Question</button>
 		</div>
 	
 	`
@@ -210,10 +234,17 @@ function tallyScore() {
 	<div class="answer-block">
 	<h3>Here's Your Final Score:</h3>
 	<h4>${score} Correct, ${scoreI} Incorect</h4>
+	<div class="endimage"><img src='http://mrwgifs.com/wp-content/uploads/2013/12/Dwight-Schrute-Michael-Scott-Raise-The-Roof-On-The-Office.gif' class='officeimg' alt='michaelraisinghands'></div>
 	<button type="submit" id="button-restart" onclick="resetQuiz()" value="Go">Restart Quiz</button></div>`;
 	$('.js-final-box').append(finalScore);
+	$('.js-final-box').removeClass('hidden');
 	
 }
-    
 
+function beginQuiz() {
+	startButton();
+	generateScore();
+	generateQuestionNumber();
+}
 
+beginQuiz();
