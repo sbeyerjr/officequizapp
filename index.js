@@ -179,6 +179,7 @@ function nextButton(){
   		generateQuestionNumber();
   		questionNumber++;
   	$('#button-nextquestion').remove();
+  	
   	});
 }
 
@@ -187,7 +188,7 @@ function generateScore() {
 	
 	const scoreBlock = `
 		<div class='score-total'>
-		<p>Your Score: ${score} Correct, ${scoreI} Incorrect</p>
+			<p>Your Score: ${score} Correct, ${scoreI} Incorrect</p>
 		</div>
 	`
 	$('.score-block').html(scoreBlock);
@@ -198,7 +199,7 @@ function generateQuestionNumber() {
 	
 	const questionNumberBlock = `
 		<div class='change-question-number'>
-		<p class='question-number-number'>Question ${i + 1} of 10</p>
+			<p class='question-number-number'>Question ${i + 1} of 10</p>
 		</div>
 	`
 	$('.question-number').html(questionNumberBlock);
@@ -220,8 +221,9 @@ function checkAnswer() {
 
 	const incorrectBlock = `
 	<div class="answer-block">
-	<h4> Sorry, the correct answer was ${STORE[i].answer}</h4>
-	<p>${STORE[i].quote}</p>
+	<h4> Sorry, the correct answer was ${STORE[i].answer}
+		</h4>
+		<p>${STORE[i].quote}</p>
 	<img src="${STORE[i].image}" class="officeimg" alt="${STORE[i].alt}">
 	<button type="submit" id="button-nextquestion" class="hidden" value="Go">Next Question</button>
 	</div>
