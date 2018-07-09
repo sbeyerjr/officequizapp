@@ -13,8 +13,8 @@ header {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     margin: 20px auto 0;
-    padding-top:15px;
-    background-color: #ecf0f1
+    padding-top: 15px;
+    background-color: #ecf0f1;
 }
 
 ul {
@@ -24,28 +24,27 @@ ul {
 
 
 h2, h4 {
-	font-size: 35px;
+	font-size: 25px;
+	font-weight: bold;
 }
 h3 {
 	font-size: 20px;
 	text-align: center;
 }
 
-
-
 input[type="radio"] {
     margin: 0 15px 15px 0;
 }
 
-
 button  {
-  color: white;
-  background-color: #9b59b6;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-  padding: 15px 25px;
-  cursor: pointer;
-  margin-top: 15px;
+ 	color: white;
+ 	background-color: #9b59b6;
+  	border: 1px solid lightgrey;
+  	border-radius: 4px;
+  	padding: 15px 25px;
+  	cursor: pointer;
+  	margin-top: 15px;
+  	width: 100%;
 }
 
 fieldset {
@@ -53,11 +52,19 @@ fieldset {
 	padding-top:20px;
 	margin: auto;
 	border-radius: 5px;
-
-
 }
+
+label {
+	font-size: 25px;
+}
+
 .btn-sub {
 	text-align: center;
+}
+
+.button-start {
+	margin-bottom: 30px;
+
 }
 
 .logo {
@@ -65,8 +72,7 @@ fieldset {
 	margin-bottom: -25px
 }
 
-
-.page{
+.page {
   background-color: #C0C0C0;
   opacity: 0.6; 
   color: #000030;
@@ -77,14 +83,18 @@ fieldset {
   font-size: 20px; 
 }
 
+.officeimg {
+	border: 3px solid black;
+	width: 100%;
+    height: auto;
+	margin: auto;
+}
 
-
-.quiz-box {
+.quiz-box, .js-question-box, .js-answer-box, .js-final-box {
 	background-color: white;
 	border: 5px solid black;
 	margin: auto;
-	padding: 10px;
-	height: 400px;
+	padding: 10px 10px 30px 10px;
 
 }
 
@@ -100,8 +110,8 @@ fieldset {
     font-size: 20px;
 }
 
-.instructions{
-	text-align: center;
+.instructions {
+	text-align: left;
 }
 
 .answer-block {
@@ -115,10 +125,14 @@ fieldset {
 
 .option {
 	background-color: #bdc3c7;
-	border:1px solid gray;
+	border: 1px solid gray;
 	border-radius: 5px;
 	padding: 10px
-	font-size:15px;
+	font-size: 15px;
+}
+
+.endimage {
+	margin: auto;
 }
 
 .hidden {
