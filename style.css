@@ -110,9 +110,11 @@ label {
     font-size: 20px;
 }
 
-.instructions {
-	text-align: left;
+.specific-instructions {
+	font-weight: bold;
 }
+
+
 
 .answer-block {
 	margin: auto;
