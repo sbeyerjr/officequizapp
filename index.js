@@ -115,17 +115,16 @@ function generateQuestionBlock() {
 	<h3>${STORE[i].question}</h3>
 	<form id="question-form">
 	 <fieldset name="answer">
-      <legend>Choose An Answer</legend>
-   	<input type="radio" name="answer" id ="option1" value="${STORE[i].options[0]}" required><label for="option1">${STORE[i].options[0]}</label><br>
-    <input type="radio" name="answer" id ="option2" value="${STORE[i].options[1]}"><label for="option2">${STORE[i].options[1]}</label><br>
-	<input type="radio" name="answer" id ="option3" value="${STORE[i].options[2]}"><label for="option3">${STORE[i].options[2]}</label><br>
-	<input type="radio" name="answer" id ="option4" value="${STORE[i].options[3]}"><label for="option4">${STORE[i].options[3]}</label><br>
-	<div class="btn-sub"><button type="submit" id="button-submit" value="Go">Submit Answer</button></div>
+      		<legend>Choose An Answer</legend>
+   		<input type="radio" name="answer" id ="option1" value="${STORE[i].options[0]}" required><label for="option1">${STORE[i].options[0]}</label><br>
+    		<input type="radio" name="answer" id ="option2" value="${STORE[i].options[1]}"><label for="option2">${STORE[i].options[1]}</label><br>
+		<input type="radio" name="answer" id ="option3" value="${STORE[i].options[2]}"><label for="option3">${STORE[i].options[2]}</label><br>
+		<input type="radio" name="answer" id ="option4" value="${STORE[i].options[3]}"><label for="option4">${STORE[i].options[3]}</label><br>
+		<div class="btn-sub"><button type="submit" id="button-submit" value="Go">Submit Answer</button></div>
 	</fieldset>
-   </form></div>
-   
+   	</form>
+	</div>
 `;
-
 
 $('.js-question-box').append(answerBlock);
 $('.js-question-box').removeClass('hidden');
@@ -156,8 +155,8 @@ function clickButton() {
   	$('.js-question-box').addClass('hidden');
   	whenToStopQuiz();
     }
-});
-  	}
+  });
+}
 
 // This tells the app to go on to the next question, or stop the quiz and tally the score.
 function whenToStopQuiz(){
